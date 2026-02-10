@@ -7,4 +7,6 @@
 
 protocol TokenStore {
     func save(accessToken: String, refreshToken: String) throws
+    func loadAccessToken() -> String?
+    func clear() throws
 }

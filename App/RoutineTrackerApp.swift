@@ -9,9 +9,12 @@ import SwiftUI
 
 @main
 struct RoutineTrackerApp: App {
+    @StateObject private var session = SessionManager()
+
     var body: some Scene {
         WindowGroup {
             ContentView()
+                .environmentObject(session)
         }
     }
 }

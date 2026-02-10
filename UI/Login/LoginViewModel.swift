@@ -6,36 +6,48 @@
 //
 
 import Foundation
+import Combine
 
 @MainActor
 final class LoginViewModel: ObservableObject {
     @Published var email: String = ""
     @Published var password: String = ""
     
-    @Published var isLoading: bool = false
+    @Published var isLoading: Bool = false
     @Published var errorMessage: String?
     
     private let authUseCase: AuthUseCase
     
-    init (authUseCase: AuthUseCase = DefaultAuthUseCase()) {
-        self.authUseCase = authUseCase
+    init(authUseCase: AuthUseCase? = nil) {
+        self.authUseCase = authUseCase ?? DefaultAuthUseCase()
     }
     
-    func login() async {
+    var canSubmit: Bool {
+        !isLoading
+            && !email.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty
+            && !password.isEmpty
+    }
+
+    func login() async -> Bool {
         errorMessage = nil
        
         guard !email.isEmpty, !password.isEmpty else {
             errorMessage = "Please fill in all fields."
-            return
+            return false
         }
         
         isLoading = true
         defer { isLoading = false }
         
         do {
-            try await authUseCase.login(email: email, password: password)
+            try await authUseCase.login(
+                email: email.trimmingCharacters(in: .whitespacesAndNewlines),
+                password: password
+            )
+            return true
         } catch {
             errorMessage = error.localizedDescription
+            return false
         }
     }
 }

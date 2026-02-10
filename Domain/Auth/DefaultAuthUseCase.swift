@@ -8,8 +8,8 @@
 final class DefaultAuthUseCase: AuthUseCase {
     private let repository: AuthRepository
     
-    init(repository: AuthRepository = DefaultAuthRepository()) {
-        self.repository = repository
+    init(repository: AuthRepository? = nil) {
+        self.repository = repository ?? DefaultAuthRepository()
     }
     
     func login(email: String, password: String) async throws {
