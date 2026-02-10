@@ -57,7 +57,6 @@
 		6DF939B92F3B058200431854 = {
 			isa = PBXGroup;
 			children = (
-				6DF939D92F3B090500431854 /* Services */,
 				6DF939D82F3B08FF00431854 /* Infrastructure */,
 				6DF939D72F3B08F400431854 /* Domain */,
 				6DF939D32F3B072400431854 /* Resources */,
@@ -125,13 +124,6 @@
 				6DF939DE2F3B15B900431854 /* Auth */,
 			);
 			path = Infrastructure;
-			sourceTree = "<group>";
-		};
-		6DF939D92F3B090500431854 /* Services */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Services;
 			sourceTree = "<group>";
 		};
 		6DF939DA2F3B098900431854 /* Auth */ = {
