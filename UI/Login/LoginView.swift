@@ -13,8 +13,32 @@ struct LoginView: View {
     
     var body: some View {
         VStack(spacing: 14) {
-            Text("Login")
+            Image(systemName: "leaf.circle.fill")
+                .font(.system(size: 100))
+                .foregroundStyle(
+                    LinearGradient(
+                        colors: [
+                            Color(red: 0.30, green: 0.70, blue: 0.34),
+                            Color(red: 0.56, green: 0.83, blue: 0.48)
+                        ],
+                        startPoint: .topLeading,
+                        endPoint: .bottomTrailing
+                    )
+                )
+                .padding(.top, 8)
+
+            Text("Welcome to Routine")
                 .font(.largeTitle.bold())
+                .padding(.bottom, 10)
+
+            Text("Login")
+                .font(.title.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .padding(.top, 10)
+
+            Text("Demo account: demo@routine.app / 123456")
+                .font(.footnote)
+                .foregroundStyle(.secondary)
                 .frame(maxWidth: .infinity, alignment: .leading)
 
             TextField("Email", text: $vm.email)
@@ -22,13 +46,11 @@ struct LoginView: View {
                 .padding(.horizontal, 14)
                 .frame(height: 48)
                 .loginFieldBackground()
-                .clipShape(RoundedRectangle(cornerRadius: 12))
 
             SecureField("Password", text: $vm.password)
                 .padding(.horizontal, 14)
                 .frame(height: 48)
                 .loginFieldBackground()
-                .clipShape(RoundedRectangle(cornerRadius: 12))
 
             if let errorMessage = vm.errorMessage {
                 Text(errorMessage)
@@ -78,10 +100,15 @@ private extension View {
 
     @ViewBuilder
     func loginFieldBackground() -> some View {
-        #if canImport(UIKit)
-        self.background(Color(uiColor: .secondarySystemBackground))
-        #else
-        self.background(Color.gray.opacity(0.12))
-        #endif
+        self
+            .background(
+                RoundedRectangle(cornerRadius: 12, style: .continuous)
+                    .fill(Color.white.opacity(0.8))
+            )
+            .overlay(
+                RoundedRectangle(cornerRadius: 10, style: .continuous)
+                    .stroke(Color(red: 0.55, green: 0.75, blue: 0.55).opacity(0.55), lineWidth: 1)
+            )
+            .shadow(color: .black.opacity(0.02), radius: 4, x: 0, y: 2)
     }
 }

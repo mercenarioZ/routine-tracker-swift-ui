@@ -11,11 +11,16 @@ struct ContentView: View {
     @EnvironmentObject private var session: SessionManager
 
     var body: some View {
-        Group {
-            if session.isLoggedIn {
-                HomeView()
-            } else {
-                LoginView()
+        ZStack {
+            Color(red: 0.92, green: 0.98, blue: 0.92)
+                .ignoresSafeArea()
+
+            Group {
+                if session.isLoggedIn {
+                    HomeView()
+                } else {
+                    LoginView()
+                }
             }
         }
     }
