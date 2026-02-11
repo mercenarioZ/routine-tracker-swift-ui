@@ -11,6 +11,7 @@ import Combine
 @MainActor
 final class SessionManager: ObservableObject {
     @Published private(set) var isLoggedIn: Bool = false
+    @Published private(set) var currentUser: UserProfile?
 
     private let tokenStore: TokenStore
 
@@ -21,14 +22,17 @@ final class SessionManager: ObservableObject {
 
     private func bootstrap() {
         isLoggedIn = tokenStore.loadAccessToken() != nil
+        currentUser = isLoggedIn ? SessionMockData.currentUser : nil
     }
 
     func onLoginSuccess() {
         isLoggedIn = true
+        currentUser = SessionMockData.currentUser
     }
 
     func logout() {
         try? tokenStore.clear()
         isLoggedIn = false
+        currentUser = nil
     }
 }

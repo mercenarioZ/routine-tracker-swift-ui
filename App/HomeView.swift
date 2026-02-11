@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject private var session: SessionManager
+    @State private var isShowingProfile = false
 
     var body: some View {
         VStack(spacing: 20) {
@@ -24,10 +25,17 @@ struct HomeView: View {
                 Spacer()
 
                 Button {
+                    isShowingProfile = true
                 } label: {
-                    Image(systemName: "person.crop.circle.fill")
-                        .font(.system(size: 22))
-                        .frame(width: 42, height: 42)
+                    if let user = session.currentUser {
+                        Text(user.initials)
+                            .font(.system(size: 14, weight: .bold))
+                            .frame(width: 42, height: 42)
+                    } else {
+                        Image(systemName: "person.crop.circle.fill")
+                            .font(.system(size: 22))
+                            .frame(width: 42, height: 42)
+                    }
                 }
                 .foregroundStyle(AppColors.primaryGreen)
                 .background(
@@ -39,6 +47,10 @@ struct HomeView: View {
                         .stroke(AppColors.accentGreen.opacity(0.5), lineWidth: 1)
                 )
                 .accessibilityLabel("Profile")
+                .sheet(isPresented: $isShowingProfile) {
+                    profileSheet
+                        .presentationDetents([.medium])
+                }
 
                 Button {
                     session.logout()
@@ -80,5 +92,32 @@ struct HomeView: View {
             Spacer()
         }
         .padding(20)
+    }
+
+    private var profileSheet: some View {
+        VStack(spacing: 16) {
+            Circle()
+                .fill(AppColors.surfaceStrong)
+                .frame(width: 100, height: 100)
+                .overlay(
+                    Text(session.currentUser?.initials ?? "U")
+                        .font(.system(size: 28, weight: .bold))
+                        .foregroundStyle(AppColors.primaryGreen)
+                )
+                .overlay(
+                    Circle()
+                        .stroke(AppColors.accentGreen.opacity(0.45), lineWidth: 1)
+                )
+
+            Text(session.currentUser?.fullName ?? "Unknown user")
+                .font(.title3.bold())
+
+            Text(session.currentUser?.email ?? "-")
+                .font(.subheadline)
+                .foregroundStyle(.secondary)
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .top)
+        .padding(.top, 24)
+        .background(AppColors.background)
     }
 }

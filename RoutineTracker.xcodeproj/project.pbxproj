@@ -19,9 +19,11 @@
 		6DF939EA2F3B1D0600431854 /* AuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939DF2F3B16BB00431854 /* AuthResponse.swift */; };
 		6DF939EB2F3B1D0700431854 /* TokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939E02F3B172200431854 /* TokenStore.swift */; };
 		6DF939EC2F3B1D0800431854 /* KeychainTokenStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939E12F3B182400431854 /* KeychainTokenStore.swift */; };
-		6DF939ED2F3B1D0900431854 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939E22F3B19A400431854 /* DefaultAuthRepository.swift */; };
-		6DF939EE2F3B1D0A00431854 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939EF2F3B1D0B00431854 /* HomeView.swift */; };
-		6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939F12F3B1D0D00431854 /* AuthRepository.swift */; };
+			6DF939ED2F3B1D0900431854 /* DefaultAuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939E22F3B19A400431854 /* DefaultAuthRepository.swift */; };
+			6DF939EE2F3B1D0A00431854 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939EF2F3B1D0B00431854 /* HomeView.swift */; };
+			6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939F12F3B1D0D00431854 /* AuthRepository.swift */; };
+			6DF93A102F3D0F0A00431854 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A112F3D0F0A00431854 /* UserProfile.swift */; };
+			6DF93A132F3D102A00431854 /* SessionMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A142F3D102A00431854 /* SessionMockData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -37,10 +39,12 @@
 		6DF939DF2F3B16BB00431854 /* AuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthResponse.swift; sourceTree = "<group>"; };
 		6DF939E02F3B172200431854 /* TokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenStore.swift; sourceTree = "<group>"; };
 		6DF939E12F3B182400431854 /* KeychainTokenStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainTokenStore.swift; sourceTree = "<group>"; };
-		6DF939E22F3B19A400431854 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
-		6DF939E32F3B1B4200431854 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
-		6DF939EF2F3B1D0B00431854 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
-		6DF939F12F3B1D0D00431854 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+			6DF939E22F3B19A400431854 /* DefaultAuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefaultAuthRepository.swift; sourceTree = "<group>"; };
+			6DF939E32F3B1B4200431854 /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+			6DF939EF2F3B1D0B00431854 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+			6DF939F12F3B1D0D00431854 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
+			6DF93A112F3D0F0A00431854 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
+			6DF93A142F3D102A00431854 /* SessionMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMockData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,17 +86,26 @@
 			path = UI;
 			sourceTree = "<group>";
 		};
-		6DF939D22F3B068C00431854 /* App */ = {
-			isa = PBXGroup;
-			children = (
-				6DF939C72F3B058200431854 /* ContentView.swift */,
-				6DF939EF2F3B1D0B00431854 /* HomeView.swift */,
-				6DF939E32F3B1B4200431854 /* SessionManager.swift */,
-				6DF939C52F3B058200431854 /* RoutineTrackerApp.swift */,
-			);
-			path = App;
-			sourceTree = "<group>";
-		};
+			6DF939D22F3B068C00431854 /* App */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A152F3D102A00431854 /* Mocks */,
+					6DF939C72F3B058200431854 /* ContentView.swift */,
+					6DF939EF2F3B1D0B00431854 /* HomeView.swift */,
+					6DF939E32F3B1B4200431854 /* SessionManager.swift */,
+					6DF939C52F3B058200431854 /* RoutineTrackerApp.swift */,
+				);
+				path = App;
+				sourceTree = "<group>";
+			};
+			6DF93A152F3D102A00431854 /* Mocks */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A142F3D102A00431854 /* SessionMockData.swift */,
+				);
+				path = Mocks;
+				sourceTree = "<group>";
+			};
 		6DF939D32F3B072400431854 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
@@ -110,15 +123,24 @@
 			path = Login;
 			sourceTree = "<group>";
 		};
-		6DF939D72F3B08F400431854 /* Domain */ = {
-			isa = PBXGroup;
-			children = (
-				6DF939DA2F3B098900431854 /* Auth */,
-			);
-			path = Domain;
-			sourceTree = "<group>";
-		};
-		6DF939D82F3B08FF00431854 /* Infrastructure */ = {
+			6DF939D72F3B08F400431854 /* Domain */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A122F3D0F0A00431854 /* User */,
+					6DF939DA2F3B098900431854 /* Auth */,
+				);
+				path = Domain;
+				sourceTree = "<group>";
+			};
+			6DF93A122F3D0F0A00431854 /* User */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A112F3D0F0A00431854 /* UserProfile.swift */,
+				);
+				path = User;
+				sourceTree = "<group>";
+			};
+			6DF939D82F3B08FF00431854 /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
 				6DF939DE2F3B15B900431854 /* Auth */,
@@ -231,10 +253,12 @@
 				6DF939C82F3B058200431854 /* ContentView.swift in Sources */,
 				6DF939C62F3B058200431854 /* RoutineTrackerApp.swift in Sources */,
 				6DF939E42F3B1B4500431854 /* SessionManager.swift in Sources */,
-				6DF939EE2F3B1D0A00431854 /* HomeView.swift in Sources */,
-				6DF939E72F3B1D0300431854 /* AuthUseCase.swift in Sources */,
-				6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */,
-			);
+					6DF939EE2F3B1D0A00431854 /* HomeView.swift in Sources */,
+					6DF939E72F3B1D0300431854 /* AuthUseCase.swift in Sources */,
+					6DF93A102F3D0F0A00431854 /* UserProfile.swift in Sources */,
+					6DF93A132F3D102A00431854 /* SessionMockData.swift in Sources */,
+					6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */,
+				);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
