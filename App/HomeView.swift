@@ -27,27 +27,7 @@ struct HomeView: View {
                             .font(.subheadline)
                             .foregroundStyle(.secondary)
                     }
-
-                    Spacer()
-
-                    Button {
-                        session.logout()
-                    } label: {
-                        Image(systemName: "rectangle.portrait.and.arrow.right")
-                            .font(.system(size: 18, weight: .semibold))
-                            .frame(width: 42, height: 42)
-                    }
-                    .foregroundStyle(AppColors.primaryGreen)
-                    .background(
-                        Circle()
-                            .fill(AppColors.surfaceStrong)
-                    )
-                    .overlay(
-                        Circle()
-                            .stroke(AppColors.accentGreen.opacity(0.5), lineWidth: 1)
-                    )
-                    .accessibilityLabel("Logout")
-                }
+                }.frame(maxWidth: .infinity, alignment: .leading)
 
                 VStack(alignment: .leading, spacing: 12) {
                     Label("Create routine", systemImage: "plus.circle")
