@@ -11,9 +11,10 @@ struct TaskListView: View {
     @EnvironmentObject private var session: SessionManager
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 14) {
+        VStack(spacing: 16) {
             Text("Task List")
                 .font(.largeTitle.bold())
+                .frame(maxWidth: .infinity, alignment: .leading)
 
             Text("Tasks will be generated from routines.")
                 .font(.subheadline)
