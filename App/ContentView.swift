@@ -17,7 +17,7 @@ struct ContentView: View {
 
             Group {
                 if session.isLoggedIn {
-                    HomeView()
+                    MainTabView()
                 } else {
                     LoginView()
                 }

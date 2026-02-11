@@ -24,6 +24,11 @@
 			6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF939F12F3B1D0D00431854 /* AuthRepository.swift */; };
 			6DF93A102F3D0F0A00431854 /* UserProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A112F3D0F0A00431854 /* UserProfile.swift */; };
 			6DF93A132F3D102A00431854 /* SessionMockData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A142F3D102A00431854 /* SessionMockData.swift */; };
+			6DF93A162F3D111A00431854 /* Routine.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A172F3D111A00431854 /* Routine.swift */; };
+			6DF93A192F3D130A00431854 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A1A2F3D130A00431854 /* MainTabView.swift */; };
+			6DF93A1B2F3D130A00431854 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A1C2F3D130A00431854 /* ProfileView.swift */; };
+			6DF93A1E2F3D14AA00431854 /* TaskListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A1F2F3D14AA00431854 /* TaskListView.swift */; };
+			6DF93A202F3D14AA00431854 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6DF93A212F3D14AA00431854 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -45,6 +50,11 @@
 			6DF939F12F3B1D0D00431854 /* AuthRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRepository.swift; sourceTree = "<group>"; };
 			6DF93A112F3D0F0A00431854 /* UserProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserProfile.swift; sourceTree = "<group>"; };
 			6DF93A142F3D102A00431854 /* SessionMockData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionMockData.swift; sourceTree = "<group>"; };
+			6DF93A172F3D111A00431854 /* Routine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Routine.swift; sourceTree = "<group>"; };
+			6DF93A1A2F3D130A00431854 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
+			6DF93A1C2F3D130A00431854 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+			6DF93A1F2F3D14AA00431854 /* TaskListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskListView.swift; sourceTree = "<group>"; };
+			6DF93A212F3D14AA00431854 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,19 +88,23 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		6DF939D12F3B068400431854 /* UI */ = {
-			isa = PBXGroup;
-			children = (
-				6DF939D42F3B076E00431854 /* Login */,
-			);
-			path = UI;
-			sourceTree = "<group>";
-		};
+			6DF939D12F3B068400431854 /* UI */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A232F3D14AA00431854 /* Settings */,
+					6DF93A222F3D14AA00431854 /* Tasks */,
+					6DF93A1D2F3D130A00431854 /* Profile */,
+					6DF939D42F3B076E00431854 /* Login */,
+				);
+				path = UI;
+				sourceTree = "<group>";
+			};
 			6DF939D22F3B068C00431854 /* App */ = {
 				isa = PBXGroup;
 				children = (
 					6DF93A152F3D102A00431854 /* Mocks */,
 					6DF939C72F3B058200431854 /* ContentView.swift */,
+					6DF93A1A2F3D130A00431854 /* MainTabView.swift */,
 					6DF939EF2F3B1D0B00431854 /* HomeView.swift */,
 					6DF939E32F3B1B4200431854 /* SessionManager.swift */,
 					6DF939C52F3B058200431854 /* RoutineTrackerApp.swift */,
@@ -114,22 +128,55 @@
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		6DF939D42F3B076E00431854 /* Login */ = {
-			isa = PBXGroup;
-			children = (
-				6DF939D62F3B07CB00431854 /* LoginViewModel.swift */,
-				6DF939D52F3B077700431854 /* LoginView.swift */,
-			);
-			path = Login;
-			sourceTree = "<group>";
-		};
+			6DF939D42F3B076E00431854 /* Login */ = {
+				isa = PBXGroup;
+				children = (
+					6DF939D62F3B07CB00431854 /* LoginViewModel.swift */,
+					6DF939D52F3B077700431854 /* LoginView.swift */,
+				);
+				path = Login;
+				sourceTree = "<group>";
+			};
+			6DF93A1D2F3D130A00431854 /* Profile */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A1C2F3D130A00431854 /* ProfileView.swift */,
+				);
+				path = Profile;
+				sourceTree = "<group>";
+			};
+			6DF93A222F3D14AA00431854 /* Tasks */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A1F2F3D14AA00431854 /* TaskListView.swift */,
+				);
+				path = Tasks;
+				sourceTree = "<group>";
+			};
+			6DF93A232F3D14AA00431854 /* Settings */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A212F3D14AA00431854 /* SettingsView.swift */,
+				);
+				path = Settings;
+				sourceTree = "<group>";
+			};
 			6DF939D72F3B08F400431854 /* Domain */ = {
 				isa = PBXGroup;
 				children = (
 					6DF93A122F3D0F0A00431854 /* User */,
+					6DF93A182F3D111A00431854 /* Routine */,
 					6DF939DA2F3B098900431854 /* Auth */,
 				);
 				path = Domain;
+				sourceTree = "<group>";
+			};
+			6DF93A182F3D111A00431854 /* Routine */ = {
+				isa = PBXGroup;
+				children = (
+					6DF93A172F3D111A00431854 /* Routine.swift */,
+				);
+				path = Routine;
 				sourceTree = "<group>";
 			};
 			6DF93A122F3D0F0A00431854 /* User */ = {
@@ -257,6 +304,11 @@
 					6DF939E72F3B1D0300431854 /* AuthUseCase.swift in Sources */,
 					6DF93A102F3D0F0A00431854 /* UserProfile.swift in Sources */,
 					6DF93A132F3D102A00431854 /* SessionMockData.swift in Sources */,
+					6DF93A162F3D111A00431854 /* Routine.swift in Sources */,
+					6DF93A192F3D130A00431854 /* MainTabView.swift in Sources */,
+					6DF93A1B2F3D130A00431854 /* ProfileView.swift in Sources */,
+					6DF93A1E2F3D14AA00431854 /* TaskListView.swift in Sources */,
+					6DF93A202F3D14AA00431854 /* SettingsView.swift in Sources */,
 					6DF939F02F3B1D0C00431854 /* AuthRepository.swift in Sources */,
 				);
 			runOnlyForDeploymentPostprocessing = 0;
