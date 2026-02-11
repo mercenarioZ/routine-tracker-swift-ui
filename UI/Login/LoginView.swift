@@ -18,8 +18,8 @@ struct LoginView: View {
                 .foregroundStyle(
                     LinearGradient(
                         colors: [
-                            Color(red: 0.30, green: 0.70, blue: 0.34),
-                            Color(red: 0.56, green: 0.83, blue: 0.48)
+                            AppColors.leafGradientStart,
+                            AppColors.leafGradientEnd
                         ],
                         startPoint: .topLeading,
                         endPoint: .bottomTrailing
@@ -103,11 +103,11 @@ private extension View {
         self
             .background(
                 RoundedRectangle(cornerRadius: 12, style: .continuous)
-                    .fill(Color.white.opacity(0.8))
+                    .fill(AppColors.inputSurface)
             )
             .overlay(
                 RoundedRectangle(cornerRadius: 10, style: .continuous)
-                    .stroke(Color(red: 0.55, green: 0.75, blue: 0.55).opacity(0.55), lineWidth: 1)
+                    .stroke(AppColors.accentGreen.opacity(0.55), lineWidth: 1)
             )
             .shadow(color: .black.opacity(0.02), radius: 4, x: 0, y: 2)
     }
